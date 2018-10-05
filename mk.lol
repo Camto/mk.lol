@@ -24,26 +24,24 @@ O HAI IM mk
 	KTHX
 	
 	HOW IZ I has_type YR val AN YR type
-		BOTH SAEM val AN ME'Z nil, O RLY?
-			YA RLY
-				FOUND YR BOTH SAEM ME'Z types'Z list AN type
-			NO WAI
-				FOUND YR BOTH SAEM val'Z type AN type
+		BOTH SAEM val AN ME'Z nil, O RLY?, YA RLY
+			FOUND YR BOTH SAEM ME'Z types'Z list AN type
+		NO WAI
+			FOUND YR BOTH SAEM val'Z type AN type
 		OIC
 	IF U SAY SO
 	
 	HOW IZ I type_to_string YR type
-		BOTH SAEM type AN ME'Z types'Z var, O RLY?
-			YA RLY
-				FOUND YR "var"
-			MEBBE BOTH SAEM type AN ME'Z types'Z num
-				FOUND YR "num"
-			MEBBE BOTH SAEM type AN ME'Z types'Z string
-				FOUND YR "string"
-			MEBBE BOTH SAEM type AN ME'Z types'Z list
-				FOUND YR "list"
-			NO WAI
-				FOUND YR SMOOSH "Unknown microKanren type: " AN type AN "." MKAY
+		BOTH SAEM type AN ME'Z types'Z var, O RLY?, YA RLY
+			FOUND YR "var"
+		MEBBE BOTH SAEM type AN ME'Z types'Z num
+			FOUND YR "num"
+		MEBBE BOTH SAEM type AN ME'Z types'Z string
+			FOUND YR "string"
+		MEBBE BOTH SAEM type AN ME'Z types'Z list
+			FOUND YR "list"
+		NO WAI
+			FOUND YR SMOOSH "Unknown microKanren type: " AN type AN "." MKAY
 		OIC
 	IF U SAY SO
 	
@@ -115,40 +113,38 @@ O HAI IM mk
 	
 	BTW Turn microKanren value into a string.
 	HOW IZ I prettify YR val
-		ME IZ is_var YR val MKAY, O RLY?
-			YA RLY
-				FOUND YR SMOOSH "_." AN val'Z id MKAY
-			MEBBE ME IZ is_num YR val MKAY
-				FOUND YR val'Z n
-			MEBBE ME IZ is_string YR val MKAY
-				FOUND YR SMOOSH ":"" AN val'Z str AN ":"" MKAY
-			MEBBE ME IZ is_list YR val MKAY
-				BOTH SAEM val AN ME'Z nil, O RLY?
-					YA RLY
-						FOUND YR "[]"
-					NO WAI
-						I HAS A prettified ITZ "["
-						I HAS A current_head ITZ val'Z head
-						I HAS A current_tail ITZ val'Z tail
-						IM IN YR LOOP UPPIN YR i TIL BOTH SAEM current_tail AN ME'Z nil
-							prettified R SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN " " MKAY
-							current_head R current_tail'Z head
-							current_tail R current_tail'Z tail
-						IM OUTTA YR LOOP
-						FOUND YR SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN "]" MKAY
-				OIC
-			NO WAI
-				FOUND YR SMOOSH "Unknown microKanren type: " AN val'Z type AN "." MKAY
+		ME IZ is_var YR val MKAY, O RLY?, YA RLY
+			FOUND YR SMOOSH "_." AN val'Z id MKAY
+		MEBBE ME IZ is_num YR val MKAY
+			FOUND YR val'Z n
+		MEBBE ME IZ is_string YR val MKAY
+			FOUND YR SMOOSH ":"" AN val'Z str AN ":"" MKAY
+		MEBBE ME IZ is_list YR val MKAY
+			BOTH SAEM val AN ME'Z nil, O RLY?
+				YA RLY
+					FOUND YR "[]"
+				NO WAI
+					I HAS A prettified ITZ "["
+					I HAS A current_head ITZ val'Z head
+					I HAS A current_tail ITZ val'Z tail
+					IM IN YR LOOP UPPIN YR i TIL BOTH SAEM current_tail AN ME'Z nil
+						prettified R SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN " " MKAY
+						current_head R current_tail'Z head
+						current_tail R current_tail'Z tail
+					IM OUTTA YR LOOP
+					FOUND YR SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN "]" MKAY
+			OIC
+		NO WAI
+			FOUND YR SMOOSH "Unknown microKanren type: " AN val'Z type AN "." MKAY
 		OIC
 	IF U SAY SO
 KTHX
 
 HOW IZ I bool_to_string YR bool
-	bool, O RLY?
-		YA RLY
-			FOUND YR "true"
-		NO WAI
-			FOUND YR  "false"
+	bool, O RLY?, YA RLY
+		FOUND YR "true"
+	NO WAI
+		FOUND YR  "false"
 	OIC
 IF U SAY SO
 
