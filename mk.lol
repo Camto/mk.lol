@@ -83,6 +83,22 @@ O HAI IM mk
 		FOUND YR ME IZ has_type YR val AN YR ME'Z types'Z string MKAY
 	IF U SAY SO
 	
+	I HAS A nil ITZ 0
+	
+	BTW Turn a normal list into a cons list.
+	HOW IZ I list YR list_
+		I HAS A current_list ITZ ME'Z nil
+		I HAS A next_list ITZ ME'Z nil
+		
+		IM IN YR LOOP UPPIN YR i TIL BOTH SAEM i AN list_'Z length
+			I HAS A idx ITZ DIFF OF DIFF OF list_'Z length AN i AN 1
+			next_list R ME IZ cons YR list_'Z SRS idx AN YR current_list MKAY
+			current_list R next_list
+		IM OUTTA YR LOOP
+		
+		FOUND YR next_list
+	IF U SAY SO
+	
 	BTW A cons list.
 	HOW IZ I cons YR head_ AN YR tail_
 		O HAI IM new_list
@@ -92,8 +108,6 @@ O HAI IM mk
 		KTHX
 		FOUND YR new_list
 	IF U SAY SO
-	
-	I HAS A nil ITZ 0
 	
 	HOW IZ I is_list YR val
 		FOUND YR ME IZ has_type YR val AN YR ME'Z types'Z list MKAY
@@ -165,6 +179,17 @@ HOW IZ I test
 	
 	VISIBLE mk IZ prettify YR mk'Z nil MKAY
 	VISIBLE I IZ bool_to_string YR mk IZ is_list YR mk'Z nil MKAY MKAY
+	VISIBLE ""
+	
+	O HAI IM normal_list
+		I HAS A length ITZ 3
+		
+		I HAS A SRS 0 ITZ mk IZ num YR 45 MKAY
+		I HAS A SRS 1 ITZ mk IZ num YR 98 MKAY
+		I HAS A SRS 2 ITZ mk IZ num YR 47 MKAY
+	KTHX
+	I HAS A consed ITZ mk IZ list YR normal_list MKAY
+	VISIBLE mk IZ prettify YR consed MKAY
 IF U SAY SO
 
 I IZ test MKAY
