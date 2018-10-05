@@ -120,22 +120,30 @@ O HAI IM mk
 		MEBBE ME IZ is_string YR val MKAY
 			FOUND YR SMOOSH ":"" AN val'Z str AN ":"" MKAY
 		MEBBE ME IZ is_list YR val MKAY
-			BOTH SAEM val AN ME'Z nil, O RLY?
-				YA RLY
-					FOUND YR "[]"
-				NO WAI
-					I HAS A prettified ITZ "["
-					I HAS A current_head ITZ val'Z head
-					I HAS A current_tail ITZ val'Z tail
-					IM IN YR LOOP UPPIN YR i TIL BOTH SAEM current_tail AN ME'Z nil
-						prettified R SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN " " MKAY
-						current_head R current_tail'Z head
-						current_tail R current_tail'Z tail
-					IM OUTTA YR LOOP
-					FOUND YR SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN "]" MKAY
+			BOTH SAEM val AN ME'Z nil, O RLY?,YA RLY
+				FOUND YR "[]"
+			NO WAI
+				I HAS A prettified ITZ "["
+				I HAS A current_head ITZ val'Z head
+				I HAS A current_tail ITZ val'Z tail
+				IM IN YR LOOP UPPIN YR i TIL BOTH SAEM current_tail AN ME'Z nil
+					prettified R SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN " " MKAY
+					current_head R current_tail'Z head
+					current_tail R current_tail'Z tail
+				IM OUTTA YR LOOP
+				FOUND YR SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN "]" MKAY
 			OIC
 		NO WAI
 			FOUND YR SMOOSH "Unknown microKanren type: " AN val'Z type AN "." MKAY
+		OIC
+	IF U SAY SO
+	
+	BTW Find value of variable in state.
+	HOW IZ I walk YR val AN YR state
+		ME IZ is_var YR val MKAY, O RLY?, YA RLY
+			BTW Do stuff including whatever `assq` is.
+		NO WAI
+			FOUND YR val
 		OIC
 	IF U SAY SO
 KTHX
