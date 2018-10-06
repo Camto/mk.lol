@@ -219,8 +219,41 @@ O HAI IM mk
 		OIC
 	IF U SAY SO
 	
-	HOW IZ I unify YR x AN YR y AN YR state
+	HOW IZ I same YR x AN YR y
+		BOTH OF BOTH SAEM x'Z type AN ME'Z types'Z num AN BOTH SAEM y'Z type AN ME'Z types'Z num, O RLY?, YA RLY
+			
+		MEBBE BOTH OF BOTH SAEM x'Z type AN ME'Z types'Z string AN BOTH SAEM y'Z type AN ME'Z types'Z string
+			
+		NO WAI
+			
+		OIC
+	IF U SAY SO
+	
+	HOW IZ I unify YR x_ AN YR y_ AN YR state
+		I HAS A x ITZ ME IZ walk YR x_ AN YR state MKAY
+		I HAS A y ITZ ME IZ walk YR y_ AN YR state MKAY
 		
+		ME IZ same YR x AN YR y MKAY, O RLY?, YA RLY
+			FOUND YR state
+		MEBBE ME IZ is_var YR x MKAY
+			O HAI IM new_pair
+				I HAS A key ITZ x'Z id
+				I HAS A val ITZ y
+			KTHX
+			state HAS A SRS state'Z length ITZ new_pair
+			state'Z length R SUM OF state'Z length AN 1
+			FOUND YR state
+		MEBBE ME IZ is_var YR y MKAY
+			O HAI IM new_pair
+				I HAS A key ITZ y'Z id
+				I HAS A val ITZ x
+			KTHX
+			state HAS A SRS state'Z length ITZ new_pair
+			state'Z length R SUM OF state'Z length AN 1
+			FOUND YR state
+		MEBBE BOTH OF ME IZ is_list YR x MKAY AN ME IZ is_list YR y MKAY
+			
+		OIC
 	IF U SAY SO
 KTHX
 
