@@ -218,6 +218,10 @@ O HAI IM mk
 			FOUND YR found
 		OIC
 	IF U SAY SO
+	
+	HOW IZ I unify YR x AN YR y AN YR state
+		
+	IF U SAY SO
 KTHX
 
 HOW IZ I not YR bool
