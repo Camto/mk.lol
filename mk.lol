@@ -148,17 +148,16 @@ O HAI IM mk
 		MEBBE ME IZ is_list YR val MKAY
 			BOTH SAEM val AN ME'Z nil, O RLY?,YA RLY
 				FOUND YR "()"
-			NO WAI
-				I HAS A prettified ITZ "("
-				I HAS A current_head ITZ val'Z head
-				I HAS A current_tail ITZ val'Z tail
-				IM IN YR LOOP UPPIN YR i TIL BOTH SAEM current_tail AN ME'Z nil
-					prettified R SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN " " MKAY
-					current_head R current_tail'Z head
-					current_tail R current_tail'Z tail
-				IM OUTTA YR LOOP
-				FOUND YR SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN ")" MKAY
 			OIC
+			I HAS A prettified ITZ "("
+			I HAS A current_head ITZ val'Z head
+			I HAS A current_tail ITZ val'Z tail
+			IM IN YR LOOP UPPIN YR i TIL BOTH SAEM current_tail AN ME'Z nil
+				prettified R SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN " " MKAY
+				current_head R current_tail'Z head
+				current_tail R current_tail'Z tail
+			IM OUTTA YR LOOP
+			FOUND YR SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN ")" MKAY
 		MEBBE ME IZ is_bool YR val MKAY
 			FOUND YR I IZ bool_to_string YR val'Z bl MKAY
 		NO WAI
@@ -179,12 +178,9 @@ O HAI IM mk
 	BTW Find value of variable in state.
 	HOW IZ I walk YR val AN YR state
 		IM IN YR LOOP
-			OBTW
-			BTW Might remove later.
 			I IZ not YR ME IZ is_var YR val MKAY MKAY, O RLY?, YA RLY
 				FOUND YR val
 			OIC
-			TLDR
 			I HAS A next_val ITZ ME IZ find YR val AN YR state MKAY
 			ME IZ is_var YR next_val MKAY, O RLY?, YA RLY
 				val R next_val
@@ -194,6 +190,33 @@ O HAI IM mk
 				FOUND YR next_val
 			OIC
 		IM OUTTA YR LOOP
+	IF U SAY SO
+	
+	HOW IZ I walk_all YR val AN YR state
+		I HAS A found ITZ ME IZ walk YR val AN YR state MKAY
+		ME IZ is_list YR found MKAY, O RLY?, YA RLY
+			BOTH SAEM found AN ME'Z nil, O RLY?, YA RLY
+				FOUND YR ME'Z nil
+			OIC
+			
+			O HAI IM walked_list
+				I HAS A length ITZ 0
+			KTHX
+			I HAS A current_head ITZ val'Z head
+			I HAS A current_tail ITZ val'Z tail
+			
+			IM IN YR LOOP UPPIN YR i TIL BOTH SAEM current_tail AN ME'Z nil
+				walked_list'Z length R SUM OF i AN 1
+				walked_list HAS A SRS i ITZ ME IZ walk_all YR current_head AN YR state MKAY
+				current_head R current_tail'Z head
+				current_tail R current_tail'Z tail
+			IM OUTTA YR LOOP
+			walked_list HAS A SRS walked_list'Z length ITZ ME IZ walk_all YR current_head AN YR state MKAY
+			walked_list'Z length R SUM OF walked_list'Z length AN 1
+			FOUND YR ME IZ list YR walked_list MKAY
+		NO WAI
+			FOUND YR found
+		OIC
 	IF U SAY SO
 KTHX
 
@@ -288,6 +311,23 @@ HOW IZ I state_test
 	VISIBLE SMOOSH "walk x: " AN mk IZ prettify YR mk IZ walk YR x AN YR find_test MKAY MKAY MKAY
 	VISIBLE SMOOSH "walk y: " AN mk IZ prettify YR mk IZ walk YR y AN YR find_test MKAY MKAY MKAY
 	VISIBLE SMOOSH "walk z: " AN mk IZ prettify YR mk IZ walk YR z AN YR find_test MKAY MKAY MKAY
+	VISIBLE ""
+	
+	O HAI IM nested_test
+		I HAS A SRS 0 ITZ y
+		I HAS A SRS 1 ITZ z
+		
+		I HAS A length ITZ 2
+	KTHX
+	O HAI IM walk_all_test_list
+		I HAS A SRS 0 ITZ x
+		I HAS A SRS 1 ITZ mk IZ list YR nested_test MKAY
+		
+		I HAS A length ITZ 2
+	KTHX
+	I HAS A walk_all_test ITZ mk IZ list YR walk_all_test_list MKAY
+	VISIBLE SMOOSH "list of pointers: " AN mk IZ prettify YR walk_all_test MKAY MKAY
+	VISIBLE SMOOSH "walk_all: " AN mk IZ prettify YR mk IZ walk_all YR walk_all_test AN YR find_test MKAY MKAY MKAY
 	
 	VISIBLE "--------------------:)"
 IF U SAY SO
