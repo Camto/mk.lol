@@ -227,6 +227,8 @@ IF U SAY SO
 HOW IZ I state_test
 	VISIBLE "state_test:)--------------------"
 	
+	mk'Z next_id R 0
+	
 	I HAS A x ITZ mk IZ var MKAY
 	I HAS A y ITZ mk IZ var MKAY
 	O HAI IM find_test
