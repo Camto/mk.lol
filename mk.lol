@@ -172,6 +172,14 @@ O HAI IM mk
 	IF U SAY SO
 KTHX
 
+HOW IZ I not YR bool
+	bool, O RLY?, YA RLY
+		FOUND YR FAIL
+	 NO WAI
+		FOUND YR WIN
+	OIC
+IF U SAY SO
+
 HOW IZ I bool_to_string YR bool
 	bool, O RLY?, YA RLY
 		FOUND YR "true"
