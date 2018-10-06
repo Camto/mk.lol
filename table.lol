@@ -1,0 +1,21 @@
+HAI 1.4
+
+O HAI IM table
+	O HAI IM SRS 0
+		I HAS A a ITZ 0
+		I HAS A b ITZ 1
+	KTHX
+	O HAI IM SRS 1
+		I HAS A a ITZ 2
+		I HAS A b ITZ 3
+	KTHX
+	
+	I HAS A length ITZ 2
+KTHX
+
+IM IN YR LOOP UPPIN YR i TIL BOTH SAEM i AN table'Z length
+	I HAS A item ITZ table'Z SRS i
+	VISIBLE item'Z a
+IM OUTTA YR LOOP
+
+KTHXBYE

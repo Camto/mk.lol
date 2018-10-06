@@ -153,7 +153,12 @@ O HAI IM mk
 	IF U SAY SO
 	
 	HOW IZ I find YR var AN YR state
-		
+		IM IN YR LOOP UPPIN YR i TIL BOTH SAEM i AN state'Z length
+			I HAS A item ITZ state'Z SRS i
+			BOTH SAEM var'Z id AN item'Z key, O RLY?, YA RLY
+				FOUND YR item'Z val
+			OIC
+		IM OUTTA YR LOOP
 		FOUND YR ME'Z false
 	IF U SAY SO
 	
@@ -175,7 +180,9 @@ HOW IZ I bool_to_string YR bool
 	OIC
 IF U SAY SO
 
-HOW IZ I test
+HOW IZ I type_test
+	VISIBLE "type_test:)--------------------"
+	
 	I HAS A var ITZ mk IZ var MKAY
 	VISIBLE mk IZ prettify YR var MKAY
 	VISIBLE mk IZ type_to_string YR var'Z type MKAY
@@ -213,8 +220,34 @@ HOW IZ I test
 	KTHX
 	I HAS A consed ITZ mk IZ list YR normal_list MKAY
 	VISIBLE mk IZ prettify YR consed MKAY
+	
+	VISIBLE "--------------------:)"
 IF U SAY SO
 
-I IZ test MKAY
+HOW IZ I state_test
+	VISIBLE "state_test:)--------------------"
+	
+	I HAS A x ITZ mk IZ var MKAY
+	I HAS A y ITZ mk IZ var MKAY
+	O HAI IM find_test
+		O HAI IM SRS 0
+			I HAS A key ITZ 1
+			I HAS A val ITZ 5
+		KTHX
+		O HAI IM SRS 1
+			I HAS A key ITZ 0
+			I HAS A val ITZ 6
+		KTHX
+		
+		I HAS A length ITZ 2
+	KTHX
+	VISIBLE mk IZ find YR x AN YR find_test MKAY
+	VISIBLE mk IZ find YR y AN YR find_test MKAY
+	
+	VISIBLE "--------------------:)"
+IF U SAY SO
+
+I IZ type_test MKAY
+I IZ state_test MKAY
 
 KTHXBYE
