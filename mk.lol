@@ -125,6 +125,18 @@ O HAI IM mk
 		I HAS A type ITZ ME'Z types'Z bool
 	KTHX
 	
+	HOW IZ I is_bool YR val
+		FOUND YR ME IZ has_type YR val AN YR ME'Z types'Z bool MKAY
+	IF U SAY SO
+	
+	HOW IZ I is_false YR val
+		ME IZ is_bool YR val MKAY, O RLY?, YA RLY
+			FOUND YR val'Z bl
+		NO WAI
+			FOUND YR FAIL
+		OIC
+	IF U SAY SO
+	
 	BTW Turn microKanren value into a string.
 	HOW IZ I prettify YR val
 		ME IZ is_var YR val MKAY, O RLY?, YA RLY
@@ -147,6 +159,8 @@ O HAI IM mk
 				IM OUTTA YR LOOP
 				FOUND YR SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN ")" MKAY
 			OIC
+		MEBBE ME IZ is_bool YR val MKAY
+			FOUND YR I IZ bool_to_string YR val'Z bl MKAY
 		NO WAI
 			FOUND YR SMOOSH "Unknown microKanren type: " AN val'Z type AN "." MKAY
 		OIC
@@ -164,11 +178,22 @@ O HAI IM mk
 	
 	BTW Find value of variable in state.
 	HOW IZ I walk YR val AN YR state
-		ME IZ is_var YR val MKAY, O RLY?, YA RLY
-			BTW Find var in state.
-		NO WAI
-			FOUND YR val
-		OIC
+		IM IN YR LOOP
+			OBTW
+			BTW Might remove later.
+			I IZ not YR ME IZ is_var YR val MKAY MKAY, O RLY?, YA RLY
+				FOUND YR val
+			OIC
+			TLDR
+			I HAS A next_val ITZ ME IZ find YR val AN YR state MKAY
+			ME IZ is_var YR next_val MKAY, O RLY?, YA RLY
+				val R next_val
+			MEBBE ME IZ is_false YR next_val MKAY
+				FOUND YR val
+			NO WAI
+				FOUND YR next_val
+			OIC
+		IM OUTTA YR LOOP
 	IF U SAY SO
 KTHX
 
@@ -239,20 +264,30 @@ HOW IZ I state_test
 	
 	I HAS A x ITZ mk IZ var MKAY
 	I HAS A y ITZ mk IZ var MKAY
+	I HAS A z ITZ mk IZ var MKAY
 	O HAI IM find_test
 		O HAI IM SRS 0
 			I HAS A key ITZ 1
-			I HAS A val ITZ 5
+			I HAS A val ITZ mk IZ num YR 5 MKAY
 		KTHX
 		O HAI IM SRS 1
 			I HAS A key ITZ 0
-			I HAS A val ITZ 6
+			I HAS A val ITZ mk IZ num YR 6 MKAY
+		KTHX
+		O HAI IM SRS 2
+			I HAS A key ITZ 2
+			I HAS A val ITZ x
 		KTHX
 		
-		I HAS A length ITZ 2
+		I HAS A length ITZ 3
 	KTHX
-	VISIBLE mk IZ find YR x AN YR find_test MKAY
-	VISIBLE mk IZ find YR y AN YR find_test MKAY
+	VISIBLE SMOOSH "find x: " AN mk IZ prettify YR mk IZ find YR x AN YR find_test MKAY MKAY MKAY
+	VISIBLE SMOOSH "find y: " AN mk IZ prettify YR mk IZ find YR y AN YR find_test MKAY MKAY MKAY
+	VISIBLE SMOOSH "find z: " AN mk IZ prettify YR mk IZ find YR z AN YR find_test MKAY MKAY MKAY
+	VISIBLE ""
+	VISIBLE SMOOSH "walk x: " AN mk IZ prettify YR mk IZ walk YR x AN YR find_test MKAY MKAY MKAY
+	VISIBLE SMOOSH "walk y: " AN mk IZ prettify YR mk IZ walk YR y AN YR find_test MKAY MKAY MKAY
+	VISIBLE SMOOSH "walk z: " AN mk IZ prettify YR mk IZ walk YR z AN YR find_test MKAY MKAY MKAY
 	
 	VISIBLE "--------------------:)"
 IF U SAY SO
