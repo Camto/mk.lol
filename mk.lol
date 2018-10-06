@@ -21,6 +21,7 @@ O HAI IM mk
 		I HAS A num ITZ 1
 		I HAS A string ITZ 2
 		I HAS A list ITZ 3
+		I HAS A bool ITZ 4
 	KTHX
 	
 	HOW IZ I has_type YR val AN YR type
@@ -45,11 +46,14 @@ O HAI IM mk
 		OIC
 	IF U SAY SO
 	
-	HOW IZ I var YR id_
+	I HAS A next_id ITZ 0
+	
+	HOW IZ I var
 		O HAI IM new_var
-			I HAS A id ITZ id_
+			I HAS A id ITZ ME'Z next_id
 			I HAS A type ITZ ME'Z types'Z var
 		KTHX
+		ME'Z next_id R SUM OF ME'Z next_id AN 1
 		FOUND YR new_var
 	IF U SAY SO
 	
@@ -111,6 +115,16 @@ O HAI IM mk
 		FOUND YR ME IZ has_type YR val AN YR ME'Z types'Z list MKAY
 	IF U SAY SO
 	
+	O HAI IM true
+		I HAS A bl ITZ WIN
+		I HAS A type ITZ ME'Z types'Z bool
+	KTHX
+	
+	O HAI IM false
+		I HAS A bl ITZ FAIL
+		I HAS A type ITZ ME'Z types'Z bool
+	KTHX
+	
 	BTW Turn microKanren value into a string.
 	HOW IZ I prettify YR val
 		ME IZ is_var YR val MKAY, O RLY?, YA RLY
@@ -121,9 +135,9 @@ O HAI IM mk
 			FOUND YR SMOOSH ":"" AN val'Z str AN ":"" MKAY
 		MEBBE ME IZ is_list YR val MKAY
 			BOTH SAEM val AN ME'Z nil, O RLY?,YA RLY
-				FOUND YR "[]"
+				FOUND YR "()"
 			NO WAI
-				I HAS A prettified ITZ "["
+				I HAS A prettified ITZ "("
 				I HAS A current_head ITZ val'Z head
 				I HAS A current_tail ITZ val'Z tail
 				IM IN YR LOOP UPPIN YR i TIL BOTH SAEM current_tail AN ME'Z nil
@@ -131,17 +145,22 @@ O HAI IM mk
 					current_head R current_tail'Z head
 					current_tail R current_tail'Z tail
 				IM OUTTA YR LOOP
-				FOUND YR SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN "]" MKAY
+				FOUND YR SMOOSH prettified AN ME IZ prettify YR current_head MKAY AN ")" MKAY
 			OIC
 		NO WAI
 			FOUND YR SMOOSH "Unknown microKanren type: " AN val'Z type AN "." MKAY
 		OIC
 	IF U SAY SO
 	
+	HOW IZ I find YR var AN YR state
+		
+		FOUND YR ME'Z false
+	IF U SAY SO
+	
 	BTW Find value of variable in state.
 	HOW IZ I walk YR val AN YR state
 		ME IZ is_var YR val MKAY, O RLY?, YA RLY
-			BTW Do stuff including whatever `assq` is.
+			BTW Find var in state.
 		NO WAI
 			FOUND YR val
 		OIC
@@ -157,7 +176,7 @@ HOW IZ I bool_to_string YR bool
 IF U SAY SO
 
 HOW IZ I test
-	I HAS A var ITZ mk IZ var YR 0 MKAY
+	I HAS A var ITZ mk IZ var MKAY
 	VISIBLE mk IZ prettify YR var MKAY
 	VISIBLE mk IZ type_to_string YR var'Z type MKAY
 	VISIBLE ""
