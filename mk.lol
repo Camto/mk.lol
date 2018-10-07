@@ -281,6 +281,10 @@ O HAI IM mk
 					ME IZ is_false YR unified MKAY, O RLY?, YA RLY
 						FOUND YR ME'Z false
 					OIC
+					x_head R x_tail'Z head
+					x_tail R x_tail'Z tail
+					y_head R y_tail'Z head
+					y_tail R y_tail'Z tail
 				IM OUTTA YR LOOP
 				FOUND YR state
 			NO WAI
