@@ -277,7 +277,7 @@ O HAI IM mk
 				I HAS A y_head ITZ y'Z head
 				I HAS A y_tail ITZ y'Z tail
 				IM IN YR LOOP UPPIN YR i TIL BOTH SAEM x_tail AN ME'Z nil
-					I HAS A unified ITZ ME IZ unify YR x_head AN YR y_head MKAY
+					I HAS A unified ITZ ME IZ unify YR x_head AN YR y_head AN YR state MKAY
 					ME IZ is_false YR unified MKAY, O RLY?, YA RLY
 						FOUND YR ME'Z false
 					OIC
