@@ -221,11 +221,11 @@ O HAI IM mk
 	
 	HOW IZ I same YR x AN YR y
 		BOTH OF BOTH SAEM x'Z type AN ME'Z types'Z num AN BOTH SAEM y'Z type AN ME'Z types'Z num, O RLY?, YA RLY
-			
+			FOUND YR BOTH SAEM x'Z n AN y'Z n
 		MEBBE BOTH OF BOTH SAEM x'Z type AN ME'Z types'Z string AN BOTH SAEM y'Z type AN ME'Z types'Z string
-			
+			FOUND YR BOTH SAEM x'Z str AN y'Z str
 		NO WAI
-			
+			FOUND YR FAIL
 		OIC
 	IF U SAY SO
 	
@@ -252,7 +252,7 @@ O HAI IM mk
 			state'Z length R SUM OF state'Z length AN 1
 			FOUND YR state
 		MEBBE BOTH OF ME IZ is_list YR x MKAY AN ME IZ is_list YR y MKAY
-			
+			BTW Iterate through lists and unify them.
 		OIC
 	IF U SAY SO
 KTHX
@@ -313,6 +313,15 @@ HOW IZ I type_test
 	KTHX
 	I HAS A consed ITZ mk IZ list YR normal_list MKAY
 	VISIBLE mk IZ prettify YR consed MKAY
+	VISIBLE ""
+
+	I HAS A same_n ITZ mk IZ num YR 0 MKAY
+	I HAS A other_n ITZ mk IZ num YR 2 MKAY
+	I HAS A same_s ITZ mk IZ string YR "a" MKAY
+	VISIBLE SMOOSH "0 = 0:: " AN I IZ bool_to_string YR mk IZ same YR same_n AN YR same_n MKAY MKAY MKAY
+	VISIBLE SMOOSH "0 = 2:: " AN I IZ bool_to_string YR mk IZ same YR same_n AN YR other_n MKAY MKAY MKAY
+	VISIBLE SMOOSH ":"a:" = 0:: " AN I IZ bool_to_string YR  mk IZ same YR same_s AN YR same_n MKAY MKAY MKAY
+	VISIBLE SMOOSH ":"a:" = :"a:":: " AN I IZ bool_to_string YR  mk IZ same YR same_s AN YR same_s MKAY MKAY MKAY
 	
 	VISIBLE "--------------------:)"
 IF U SAY SO
