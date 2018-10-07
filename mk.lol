@@ -120,6 +120,16 @@ O HAI IM mk
 		FOUND YR ME IZ has_type YR val AN YR ME'Z types'Z list MKAY
 	IF U SAY SO
 	
+	HOW IZ I length YR list
+		I HAS A current_tail ITZ list
+		IM IN YR LOOP UPPIN YR i
+			BOTH SAEM current_tail AN ME'Z nil, O RLY?, YA RLY
+				FOUND YR i
+			OIC
+			current_tail R current_tail'Z tail
+		IM OUTTA YR LOOP
+	IF U SAY SO
+	
 	O HAI IM true
 		I HAS A bl ITZ WIN
 		I HAS A type ITZ ME'Z types'Z bool
@@ -325,6 +335,7 @@ HOW IZ I type_test
 	KTHX
 	I HAS A consed ITZ mk IZ list YR normal_list MKAY
 	VISIBLE mk IZ prettify YR consed MKAY
+	VISIBLE mk IZ length YR consed MKAY
 	VISIBLE ""
 
 	I HAS A same_n ITZ mk IZ num YR 0 MKAY
