@@ -136,7 +136,7 @@ O HAI IM mk
 	
 	HOW IZ I is_false YR val
 		ME IZ is_bool YR val MKAY, O RLY?, YA RLY
-			FOUND YR val'Z bl
+			FOUND YR I IZ not YR val'Z bl MKAY
 		NO WAI
 			FOUND YR FAIL
 		OIC
@@ -339,6 +339,7 @@ HOW IZ I state_test
 	I HAS A x ITZ mk IZ var MKAY
 	I HAS A y ITZ mk IZ var MKAY
 	I HAS A z ITZ mk IZ var MKAY
+	I HAS A w ITZ mk IZ var MKAY
 	O HAI IM find_test
 		O HAI IM SRS 0
 			I HAS A key ITZ 1
@@ -358,10 +359,12 @@ HOW IZ I state_test
 	VISIBLE SMOOSH "find x: " AN mk IZ prettify YR mk IZ find YR x AN YR find_test MKAY MKAY MKAY
 	VISIBLE SMOOSH "find y: " AN mk IZ prettify YR mk IZ find YR y AN YR find_test MKAY MKAY MKAY
 	VISIBLE SMOOSH "find z: " AN mk IZ prettify YR mk IZ find YR z AN YR find_test MKAY MKAY MKAY
+	VISIBLE SMOOSH "find w: " AN mk IZ prettify YR mk IZ find YR w AN YR find_test MKAY MKAY MKAY
 	VISIBLE ""
 	VISIBLE SMOOSH "walk x: " AN mk IZ prettify YR mk IZ walk YR x AN YR find_test MKAY MKAY MKAY
 	VISIBLE SMOOSH "walk y: " AN mk IZ prettify YR mk IZ walk YR y AN YR find_test MKAY MKAY MKAY
 	VISIBLE SMOOSH "walk z: " AN mk IZ prettify YR mk IZ walk YR z AN YR find_test MKAY MKAY MKAY
+	VISIBLE SMOOSH "walk w: " AN mk IZ prettify YR mk IZ walk YR w AN YR find_test MKAY MKAY MKAY
 	VISIBLE ""
 	
 	O HAI IM nested_test
