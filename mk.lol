@@ -257,7 +257,14 @@ O HAI IM mk
 			state'Z length R SUM OF state'Z length AN 1
 			FOUND YR state
 		MEBBE BOTH OF ME IZ is_list YR x MKAY AN ME IZ is_list YR y MKAY
-			BTW Iterate through lists and unify them.
+			BOTH SAEM ME IZ length YR x MKAY AN ME IZ length YR y MKAY, O RLY?, YA RLY
+				BOTH SAEM x AN ME'Z nil, O RLY?, YA RLY
+					FOUND YR state
+				OIC
+				BTW Iterate here.
+			NO WAI
+				FOUND YR ME'Z false
+			OIC
 		OIC
 	IF U SAY SO
 KTHX
