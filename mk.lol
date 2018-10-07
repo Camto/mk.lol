@@ -271,7 +271,18 @@ O HAI IM mk
 				BOTH SAEM x AN ME'Z nil, O RLY?, YA RLY
 					FOUND YR state
 				OIC
-				BTW Iterate here.
+
+				I HAS A x_head ITZ x'Z head
+				I HAS A x_tail ITZ x'Z tail
+				I HAS A y_head ITZ y'Z head
+				I HAS A y_tail ITZ y'Z tail
+				IM IN YR LOOP UPPIN YR i TIL BOTH SAEM x_tail AN ME'Z nil
+					I HAS A unified ITZ ME IZ unify YR x_head AN YR y_head MKAY
+					ME IZ is_false YR unified MKAY, O RLY?, YA RLY
+						FOUND YR ME'Z false
+					OIC
+				IM OUTTA YR LOOP
+				FOUND YR state
 			NO WAI
 				FOUND YR ME'Z false
 			OIC
