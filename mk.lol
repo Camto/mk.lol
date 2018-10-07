@@ -286,6 +286,10 @@ O HAI IM mk
 					y_head R y_tail'Z head
 					y_tail R y_tail'Z tail
 				IM OUTTA YR LOOP
+				I HAS A unified ITZ ME IZ unify YR x_head AN YR y_head AN YR state MKAY
+				ME IZ is_false YR unified MKAY, O RLY?, YA RLY
+					FOUND YR ME'Z false
+				OIC
 				FOUND YR state
 			NO WAI
 				FOUND YR ME'Z false
