@@ -458,6 +458,25 @@ HOW IZ I state_test
 		VISIBLE "(== w 4):: true"
 	OIC
 	
+	I HAS A v ITZ mk IZ var MKAY
+	I HAS A u ITZ mk IZ var MKAY
+	I HAS A list_1 ITZ mk IZ cons YR u AN YR mk IZ cons YR v_4 AN YR mk'Z nil MKAY MKAY
+	I HAS A list_2 ITZ mk IZ cons YR v_3 AN YR mk IZ cons YR v AN YR mk'Z nil MKAY MKAY
+	
+	I HAS A unify_lists ITZ mk IZ unify YR list_1 AN YR list_2 AN YR find_test MKAY
+	mk IZ is_false YR unify_lists MKAY, O RLY?, YA RLY
+		VISIBLE "(==:)  (u 4):)  (3 v)):: false"
+	NO WAI
+		VISIBLE "(==:)  (u 4):)  (3 v)):: true"
+	OIC
+	
+	I HAS A unify_u_3 ITZ mk IZ unify YR u AN YR v_3 AN YR find_test MKAY
+	mk IZ is_false YR unify_u_3 MKAY, O RLY?, YA RLY
+		VISIBLE "(== u 3):: false"
+	NO WAI
+		VISIBLE "(== u 3):: true"
+	OIC
+	
 	VISIBLE "--------------------:)"
 IF U SAY SO
 
