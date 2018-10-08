@@ -14,7 +14,7 @@ O HAI IM mk
 				* find - Deref a var once.
 				* walk - Deref a var until base value is found.
 				* walk_all - walk but for lists too.
-				* unify - [Testing] Make two values the same.
+				* unify - Assert that two values the same.
 		
 		To add:
 			* Relations.
