@@ -14,7 +14,7 @@ O HAI IM mk
 				* find - Deref a var once.
 				* walk - Deref a var until base value is found.
 				* walk_all - walk but for lists too.
-				* unify - [W.I.P.] Make two values the same.
+				* unify - [Testing] Make two values the same.
 		
 		To add:
 			* Relations.
@@ -22,11 +22,15 @@ O HAI IM mk
 	
 	BTW the microKanren types.
 	O HAI IM types
+		BTW Core types.
 		I HAS A var ITZ 0
 		I HAS A num ITZ 1
 		I HAS A string ITZ 2
 		I HAS A list ITZ 3
+		
+		BTW Types that need to be checked.
 		I HAS A bool ITZ 4
+		I HAS A state ITZ 5
 	KTHX
 	
 	HOW IZ I has_type YR val AN YR type
@@ -294,6 +298,8 @@ O HAI IM mk
 			NO WAI
 				FOUND YR ME'Z false
 			OIC
+		NO WAI
+			FOUND YR ME'Z false
 		OIC
 	IF U SAY SO
 KTHX
@@ -378,6 +384,9 @@ HOW IZ I state_test
 	I HAS A z ITZ mk IZ var MKAY
 	I HAS A w ITZ mk IZ var MKAY
 	O HAI IM find_test
+		I HAS A type ITZ mk'Z types'Z state
+		I HAS A length ITZ 3
+		
 		O HAI IM SRS 0
 			I HAS A key ITZ 1
 			I HAS A val ITZ mk IZ num YR 5 MKAY
@@ -390,8 +399,6 @@ HOW IZ I state_test
 			I HAS A key ITZ 2
 			I HAS A val ITZ x
 		KTHX
-		
-		I HAS A length ITZ 3
 	KTHX
 	VISIBLE SMOOSH "find x: " AN mk IZ prettify YR mk IZ find YR x AN YR find_test MKAY MKAY MKAY
 	VISIBLE SMOOSH "find y: " AN mk IZ prettify YR mk IZ find YR y AN YR find_test MKAY MKAY MKAY
@@ -419,6 +426,37 @@ HOW IZ I state_test
 	I HAS A walk_all_test ITZ mk IZ list YR walk_all_test_list MKAY
 	VISIBLE SMOOSH "list of pointers: " AN mk IZ prettify YR walk_all_test MKAY MKAY
 	VISIBLE SMOOSH "walk_all: " AN mk IZ prettify YR mk IZ walk_all YR walk_all_test AN YR find_test MKAY MKAY MKAY
+	
+	I HAS A v_3 ITZ mk IZ num YR 3 MKAY
+	I HAS A v_4 ITZ mk IZ num YR 4 MKAY
+	
+	I HAS A unify_3 ITZ mk IZ unify YR v_3 AN YR v_3 AN YR find_test MKAY
+	mk IZ is_false YR unify_3 MKAY, O RLY?, YA RLY
+		VISIBLE "(== 3 3):: false"
+	NO WAI
+		VISIBLE "(== 3 3):: true"
+	OIC
+	
+	I HAS A unify_3_4 ITZ mk IZ unify YR v_3 AN YR v_4 AN YR find_test MKAY
+	mk IZ is_false YR unify_3_4 MKAY, O RLY?, YA RLY
+		VISIBLE "(== 3 4):: false"
+	NO WAI
+		VISIBLE "(== 3 4):: true"
+	OIC
+	
+	I HAS A unify_w_3 ITZ mk IZ unify YR w AN YR v_3 AN YR find_test MKAY
+	mk IZ is_false YR unify_w_3 MKAY, O RLY?, YA RLY
+		VISIBLE "(== w 3):: false"
+	NO WAI
+		VISIBLE "(== w 3):: true"
+	OIC
+	
+	I HAS A unify_w_4 ITZ mk IZ unify YR w AN YR v_4 AN YR find_test MKAY
+	mk IZ is_false YR unify_w_4 MKAY, O RLY?, YA RLY
+		VISIBLE "(== w 4):: false"
+	NO WAI
+		VISIBLE "(== w 4):: true"
+	OIC
 	
 	VISIBLE "--------------------:)"
 IF U SAY SO
