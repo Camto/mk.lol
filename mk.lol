@@ -302,6 +302,17 @@ O HAI IM mk
 			FOUND YR ME'Z false
 		OIC
 	IF U SAY SO
+	
+	HOW IZ I eq YR x_ AN YR y_
+		O HAI IM eq_with_state
+			I HAS A x_ ITZ x
+			I HAS A y_ ITZ y
+			HOW IZ I call YR self AN YR state
+				FOUND YR ME IZ unify YR self'Z x AN YR self'Z y AN YR state MKAY
+			IF U SAY SO
+		KTHX
+		FOUND YR eq_with_state
+	IF U SAY SO
 KTHX
 
 HOW IZ I not YR bool
