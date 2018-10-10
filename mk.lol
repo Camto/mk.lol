@@ -313,6 +313,16 @@ O HAI IM mk
 		KTHX
 		FOUND YR eq_with_state
 	IF U SAY SO
+	
+	HOW IZ I conde YR programs_
+		O HAI IM conde_with_state
+			I HAS A programs ITZ programs_
+			HOW IZ I call YR self AN YR state
+				BTW Add disjunction for each program in programs.
+			IF U SAY SO
+		KTHX
+		FOUND YR conde_with_state
+	IF U SAY SO
 KTHX
 
 HOW IZ I not YR bool
