@@ -498,6 +498,53 @@ HOW IZ I state_test
 		VISIBLE "(== u 3):: true"
 	OIC
 	
+	OBTW
+	I HAS A a ITZ mk IZ var MKAY
+	I HAS A b ITZ mk IZ var MKAY
+	I HAS A c ITZ mk IZ var MKAY
+	I HAS A d ITZ mk IZ var MKAY
+	
+	O HAI IM list_1_
+		I HAS A length ITZ 3
+		I HAS A SRS 0 ITZ x
+		I HAS A SRS 1 ITZ w
+		I HAS A SRS 2 ITZ x
+	KTHX
+	
+	O HAI IM list_2_
+		I HAS A length ITZ 3
+		I HAS A SRS 0 ITZ w
+		I HAS A SRS 1 ITZ x
+		I HAS A SRS 2 ITZ w
+	KTHX
+	
+	O HAI IM conde
+		I HAS A length ITZ 2
+		
+		O HAI IM SRS 0
+			I HAS A length ITZ 2
+			
+			I HAS A SRS 0 ITZ mk IZ eq YR mk IZ list YR list_1_ MKAY AN YR q MKAY
+			I HAS A SRS 1 ITZ mk IZ eq YR y AN YR w MKAY
+		KTHX
+		
+		O HAI IM SRS 1
+			I HAS A length ITZ 2
+			
+			I HAS A SRS 0 ITZ mk IZ eq YR mk IZ list YR list_2_ MKAY AN YR q MKAY
+			I HAS A SRS 1 ITZ mk IZ eq YR y AN YR w MKAY
+		KTHX
+	KTHX
+	
+	O HAI IM prog
+		I HAS A length ITZ 1
+		I HAS A SRS 0 ITZ mk IZ conde YR conde MKAY
+	KTHX
+	
+	I HAS A result ITZ mk IZ run YR 2 AN YR a AN YR prog MKAY
+	VISIBLE mk IZ prettify YR result MKAY
+	TLDR
+	
 	VISIBLE "--------------------:)"
 IF U SAY SO
 
